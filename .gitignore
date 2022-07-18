@@ -1,0 +1,8 @@
+node_modules
+react
+.DS_Store
+package-lock.json
+results
+dist
+*.tgz
+benchmark/node_modules
