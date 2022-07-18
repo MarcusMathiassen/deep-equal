@@ -6,3 +6,4 @@ results
 dist
 *.tgz
 benchmark/node_modules
+.npmrc
