@@ -1,6 +1,14 @@
 # @marcm/deep-equal
 *Might* be the fastest around (see benchmark below)
 
+## Install
+```bash
+npm install @marcm/deep-equal
+```
+```bash
+yarn add @marcm/deep-equal
+```
+
 ## Supports 
 - Objects
 - Arrays
@@ -12,6 +20,17 @@
 - Sets
 - Maps
 - React (use @marcm/deep-equal/react)
+
+## Usage
+```javascript
+const { deepEqual } = require('@marcm/deep-equal')
+// or 
+import { deepEqual } from '@marcm/deep-equal'
+// or if being used for React
+import { deepEqual } from '@marcm/deep-equal/react'
+
+```
+
 
 ## Benchmark[^1] (from [fast-equals](https://github.com/planttheidea/fast-equals))
 [^1]: Showing 'overall averages' with no tests filtered. Ran on an M1 Pro (macOS 12.4).
@@ -30,5 +49,17 @@
 | assert.deepStrictEqual | 29.661    |
 | deep-equal             | 2.745     |
 
-Passes the full test-suite of [fast-equals](https://github.com/planttheidea/fast-equals)
+Passes the full test suite of [fast-equals](https://github.com/planttheidea/fast-equals)
 
+## Example
+```javascript
+// Typed Arrays
+deepEqual(new Float32Array([3, 4, NaN]), new Float32Array([3, 4, NaN])) // true
+deepEqual(new Float32Array([3, 4, NaN]), new Float32Array([3, 4, null])) // false
+// Objects and array
+deepEqual([{ a: 'a' }, { b: 'b' }], [{ a: 'a' }, { b: 'b' }]) // true
+// Dates
+deepEqual(new Date('2017-06-16T21:36:48.362Z'), new Date('2016-06-16T21:36:48.362Z')) // false
+deepEqual(new Date('2017-06-16T21:36:48.362Z'), new Date('2017-06-16T21:36:48.362Z')) // true
+//...
+```
