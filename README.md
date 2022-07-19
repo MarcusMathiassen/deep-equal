@@ -26,17 +26,17 @@ yarn add @marcm/deep-equal
 
 | Package | Ops / sec |
 | :---        |    ---: |
-| @marcm/deep-equal      | 11,294.928 |
-| fast-equals            | 7,317.215  |
-| deep-eql               | 4,528.424  |
-| fast-equals (circular) | 2,966.189  |
-| fast-deep-equal        | 2,841.046  |
-| react-fast-compare     | 2,684.473  |
-| nano-equal             | 1,150.366  |
-| underscore.isEqual     | 1,107.566  |
-| lodash.isEqual         | 673.473    |
-| assert.deepStrictEqual | 30.697     |
-| deep-equal             | 2.888      |
+| @marcm/deep-equal      | ``11,294.928`` |
+| fast-equals            | ``7,317.215``  |
+| deep-eql               | ``4,528.424``  |
+| fast-equals (circular) | ``2,966.189``  |
+| fast-deep-equal        | ``2,841.046``  |
+| react-fast-compare     | ``2,684.473``  |
+| nano-equal             | ``1,150.366``  |
+| underscore.isEqual     | ``1,107.566``  |
+| lodash.isEqual         | ``673.473``    |
+| assert.deepStrictEqual | ``30.697``     |
+| deep-equal             | ``2.888``      |
 
 Passes the full test suite of [fast-equals](https://github.com/planttheidea/fast-equals)
 
@@ -48,10 +48,6 @@ import { deepEqual } from '@marcm/deep-equal'
 // or if being used for React
 import { deepEqual } from '@marcm/deep-equal/react'
 
-```
-
-## Example
-```javascript
 // Typed Arrays
 deepEqual(new Float32Array([3, 4, NaN]), new Float32Array([3, 4, NaN])) // true
 deepEqual(new Float32Array([3, 4, NaN]), new Float32Array([3, 4, null])) // false
@@ -60,5 +56,3 @@ deepEqual([{ a: 'a' }, { b: 'b' }], [{ a: 'a' }, { b: 'b' }]) // true
 // Dates
 deepEqual(new Date('2017-06-16T21:36:48.362Z'), new Date('2016-06-16T21:36:48.362Z')) // false
 deepEqual(new Date('2017-06-16T21:36:48.362Z'), new Date('2017-06-16T21:36:48.362Z')) // true
-//...
-```
