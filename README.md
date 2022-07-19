@@ -21,35 +21,34 @@ yarn add @marcm/deep-equal
 - Maps
 - React (use @marcm/deep-equal/react)
 
-## Usage
-```javascript
-const { deepEqual } = require('@marcm/deep-equal')
-// or 
-import { deepEqual } from '@marcm/deep-equal'
-// or if being used for React
-import { deepEqual } from '@marcm/deep-equal/react'
-
-```
-
-
 ## Benchmark[^1] (from [fast-equals](https://github.com/planttheidea/fast-equals))
 [^1]: Showing 'overall averages' with no tests filtered. Ran on an M1 Pro (macOS 12.4).
 
 | Package | Ops / sec |
 | :---        |    ---: |
-| @marcm/deep-equal | 9,848.200 |
-| fast-equals | 7,255.689 |
-| fast-equals (circular) | 3,103.426 |
-| deep-eql               | 2,998.862 |
-| fast-deep-equal        | 2,743.475 |
-| react-fast-compare     | 2,627.916 |
-| nano-equal             | 1,151.799 |
-| underscore.isEqual     | 1,061.762 |
-| lodash.isEqual         | 636.602   |
-| assert.deepStrictEqual | 29.661    |
-| deep-equal             | 2.745     |
+| @marcm/deep-equal      | 11,294.928 |
+| fast-equals            | 7,317.215  |
+| deep-eql               | 4,528.424  |
+| fast-equals (circular) | 2,966.189  |
+| fast-deep-equal        | 2,841.046  |
+| react-fast-compare     | 2,684.473  |
+| nano-equal             | 1,150.366  |
+| underscore.isEqual     | 1,107.566  |
+| lodash.isEqual         | 673.473    |
+| assert.deepStrictEqual | 30.697     |
+| deep-equal             | 2.888      |
 
 Passes the full test suite of [fast-equals](https://github.com/planttheidea/fast-equals)
+
+## Usage
+```javascript
+const { deepEqual } = require('@marcm/deep-equal')
+// or
+import { deepEqual } from '@marcm/deep-equal'
+// or if being used for React
+import { deepEqual } from '@marcm/deep-equal/react'
+
+```
 
 ## Example
 ```javascript
