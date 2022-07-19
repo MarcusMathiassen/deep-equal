@@ -20,10 +20,7 @@ function x(a, b) {
         case Map:
             if (a.size !== b.size) return false
             var vA
-            for ([k, vA] of a) {
-                if (!b.has(k) || !x(vA, b.get(k)))
-                    return false
-            }
+            for ([k, vA] of a) if (!b.has(k) || !x(vA, b.get(k))) return false
             return true
         case Set:
             i = a.size
@@ -34,9 +31,9 @@ function x(a, b) {
         case RegExp: return !(a.source !== b.source || a.flags !== b.flags)
         case Date: {
             var aT = a.getTime(), bT = b.getTime()
-            return (aT === bT) || (aT !== aT && bT !== bT);
+            return (aT === bT) || (aT !== aT && bT !== bT)
         }
-        case Promise: return a === b
+        case Promise: return false
     }
     if (isArray(a)) {
         i = a.length

@@ -1,6 +1,4 @@
 // rollup.config.js
-import { terser } from 'rollup-plugin-terser'
-
 const inputName = 'index'
 const inputsDirs = ['', 'react/']
 const formats = ['esm', 'cjs', 'umd']
@@ -14,13 +12,7 @@ export default inputsDirs.reduce((acc, inputDir) => {
                 file: `dist/${inputDir}${inputName}.${format}.js`,
                 format,
             },
-            plugins: [
-                // terser({
-                //     compress: {
-                //         booleans: false,
-                //     },
-                // }),
-            ],
+            plugins: [],
         }))
     )
     return acc
