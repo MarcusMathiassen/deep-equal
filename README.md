@@ -1,5 +1,6 @@
 # @marcm/deep-equal
-*Might* be the fastest around (see benchmark below)
+
+*Mighty* fast deep equals (~837 bytes gzipped)
 
 ## Install
 ```bash
@@ -10,19 +11,20 @@ yarn add @marcm/deep-equal
 ```
 
 ## Supports 
-- Objects
-- Arrays
-- TypedArrays
-- RegExp
-- Promises
-- Dates
-- NaN equals NaN
-- Sets
-- Maps
-- React (use @marcm/deep-equal/react)
+- ``Object``
+- ``Array``
+- ``TypedArray``
+- ``RegExp``
+- ``Promise``
+- ``Date``
+- ``NaN``
+- ``Set``
+- ``Map``
+- ``React`` (@marcm/deep-equal/react)
 
 ## Benchmark[^1] (from [fast-equals](https://github.com/planttheidea/fast-equals))
-[^1]: Showing 'overall averages' with no tests filtered. Ran on an M1 Pro (macOS 12.4).
+[^1]: showing benchmark 'overall averages'. Ran on an M1 Pro (macOS 12.4).
+Run yourself by adding [@marcm/deep-equal](https://github.com/MarcusMathiassen/deep-equal) to the [fast-equals](https://github.com/planttheidea/fast-equals) benchmark
 
 | Package | Ops / sec |
 | :---        |    ---: |
