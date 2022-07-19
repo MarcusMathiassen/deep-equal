@@ -28,7 +28,7 @@ Run yourself by adding [@marcm/deep-equal](https://github.com/MarcusMathiassen/d
 
 | Package | Ops / sec |
 | :---        |    ---: |
-| @marcm/deep-equal      | ``11,294.928`` |
+| **@marcm/deep-equal**      | ``11,294.928`` |
 | fast-equals            | ``7,317.215``  |
 | deep-eql               | ``4,528.424``  |
 | fast-equals (circular) | ``2,966.189``  |
