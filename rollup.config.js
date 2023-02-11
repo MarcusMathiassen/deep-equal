@@ -1,30 +1,30 @@
 // rollup.config.js
 import { terser } from 'rollup-plugin-terser'
 
-const inputName = 'index'
-const inputsDirs = ['', 'react/']
-const formats = ['esm', 'cjs', 'umd']
+const inputs = ['index', 'react']
+const formats = ['esm', 'cjs']
 
-export default inputsDirs.reduce((acc, inputDir) => {
+export default inputs.reduce((acc, input) => {
     acc.push(
         ...formats.map((format) => ({
-            input: `${inputDir}${inputName}.js`,
+            input: `src/${input}.js`,
             output: {
                 name: 'deepEqual',
-                file: `dist/${inputDir}${inputName}.${format}.js`,
+                file: `dist/${input !== 'index' ? `${input}/index` : input}${
+                    format === 'umd' ? '' : `.${format === 'esm' ? 'js' : `${format}`}`
+                }`,
                 format,
             },
             plugins: [
                 terser({
-                    mangle: {
-                        module: true,
+                    module: true,
+                    compress: { defaults: false, module: true, hoist_vars: true, join_vars: false, sequences: false },
+                    mangle: true,
+                    output: {
+                        beautify: true,
                     },
-                    compress: {
-                        passes: 10,
-                        module: true,
-                        reduce_vars: true,
-                        defaults: false,
-                    },
+                    parse: {},
+                    rename: {},
                 }),
             ],
         }))

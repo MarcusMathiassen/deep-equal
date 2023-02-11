@@ -1,10 +1,10 @@
-const React = require('react');
+import { createElement } from 'react'
 
 const fn = () => {};
 const promise = Promise.resolve('foo');
 const typedArray = new Float32Array([1, 2, 3])
 
-module.exports = [
+export const testSuites = [
   {
     description: 'TypedArrays',
     tests: [
@@ -628,15 +628,15 @@ module.exports = [
         deepEqual: true,
         description: 'simple react elements are deeply equal',
         shallowEqual: false,
-        value1: React.createElement('div', {}, 'foo'),
-        value2: React.createElement('div', {}, 'foo'),
+        value1: createElement('div', {}, 'foo'),
+        value2: createElement('div', {}, 'foo'),
       },
       {
         deepEqual: false,
         description: 'simple react elements are not deeply equal',
         shallowEqual: false,
-        value1: React.createElement('div', {}, 'foo'),
-        value2: React.createElement('div', {}, 'bar'),
+        value1: createElement('div', {}, 'foo'),
+        value2: createElement('div', {}, 'bar'),
       },
     ],
   },

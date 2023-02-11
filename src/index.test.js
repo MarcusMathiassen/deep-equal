@@ -1,12 +1,16 @@
-'use strict';
-const testSuites = require('./testSuites.js')
-const { deepEqual } = require('../index.js')
+import { testSuites } from './testSuites.js';
+import { deepEqual } from './react.js'
+import ava from 'ava'
+
+try {
 testSuites.forEach(suite => {
-    describe(suite.description, () => {
-        suite.tests.forEach(t => {
-            test(t.description, () => {
-                expect(deepEqual(t.value1, t.value2)).toBe(t.deepEqual)
-            })
+    suite.tests.forEach((t, i) => {
+        ava(`[${suite.description} ${i}] ${t.description}`, test => {
+            test.is(deepEqual(t.value1, t.value2), t.deepEqual)
         })
     })
 })
+}
+catch(err) {
+    console.log(err)
+}
