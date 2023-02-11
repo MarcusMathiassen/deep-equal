@@ -51,8 +51,8 @@ import { deepEqual } from '@marcm/deep-equal'
 import { deepEqual } from '@marcm/deep-equal/react'
 
 // Typed Arrays
-deepEqual(new Float32Array([3, 4, NaN]), new Float32Array([3, 4, NaN])) // true
-deepEqual(new Float32Array([3, 4, NaN]), new Float32Array([3, 4, null])) // false
+deepEqual(new Float32Array([3, 4, 6]), new Float32Array([3, 4, 6])) // true
+deepEqual(new Float32Array([3, 4, 6]), new Float32Array([3, 4])) // false
 // Objects and array
 deepEqual([{ a: 'a' }, { b: 'b' }], [{ a: 'a' }, { b: 'b' }]) // true
 // Dates
