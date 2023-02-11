@@ -1,5 +1,6 @@
 node_modules
 react
+package
 .DS_Store
 package-lock.json
 results
