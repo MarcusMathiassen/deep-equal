@@ -21,7 +21,7 @@ export default inputs.reduce((acc, input) => {
                     compress: { defaults: false, module: true, hoist_vars: true, join_vars: false, sequences: false },
                     mangle: true,
                     output: {
-                        beautify: true,
+                        beautify: false,
                     },
                     parse: {},
                     rename: {},
