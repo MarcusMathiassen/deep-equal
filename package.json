@@ -1,6 +1,6 @@
 {
   "name": "@marcm/deep-equal",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Deep comparison of objects and arrays",
   "author": "Marcus Mathiassen",
   "license": "MIT",
