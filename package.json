@@ -1,6 +1,6 @@
 {
   "name": "@marcm/deep-equal",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Deep comparison of objects and arrays",
   "author": "Marcus Mathiassen",
   "license": "MIT",
@@ -23,10 +23,10 @@
     "build": "rm -rf dist && rollup -c && npm pack"
   },
   "devDependencies": {
+    "@rollup/plugin-terser": "^0.4.0",
     "ava": "^4.3.1",
     "react": "^18.2.0",
-    "rollup": "^2.77.0",
-    "rollup-plugin-terser": "^7.0.2"
+    "rollup": "^2.77.0"
   },
   "files": [
     "dist"

@@ -1,5 +1,5 @@
 // rollup.config.js
-import { terser } from 'rollup-plugin-terser'
+import terser from '@rollup/plugin-terser'
 
 const inputs = ['index', 'react']
 const formats = ['esm', 'cjs']
