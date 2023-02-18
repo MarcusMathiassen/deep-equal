@@ -59,10 +59,10 @@ export function deepEqual(a, b) {
             return true
 
         case Date:
-            var aTime = a.getTime(),
-                bTime = b.getTime()
+            a = a.getTime()
+            b = b.getTime()
             // `getTime()` returns NaN for invalid dates
-            return aTime === bTime || (aTime !== aTime && bTime !== bTime)
+            return a === b || (a !== a && b !== b)
 
         case Map:
             if (a.size !== b.size) return false
@@ -78,7 +78,8 @@ export function deepEqual(a, b) {
         case Set:
             var i = a.size
             if (i !== b.size) return false
-            ;(a = [...a]), (b = [...b])
+            a = [...a]
+            b = [...b]
             for (; i--; ) if (!deepEqual(a[i], b[i])) return false
             return true
 
